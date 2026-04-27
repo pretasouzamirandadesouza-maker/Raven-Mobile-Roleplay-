@@ -7,18 +7,39 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#08000f;color:white}
+
+body{
+    background:#08000f;
+    color:white;
+}
+
+/* HEADER COM IMAGEM */
 header{
     min-height:100vh;
-    background:linear-gradient(135deg,#07000d,#220033,#6a00ff);
+    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.85)),
+    url("bg.jpg");
+    background-size:cover;
+    background-position:center;
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
     padding:30px;
 }
-.hero h1{font-size:48px;color:#fff;text-shadow:0 0 20px #9b4dff}
-.hero p{font-size:20px;margin:20px 0;color:#ddd}
+
+.hero h1{
+    font-size:50px;
+    color:#fff;
+    text-shadow:0 0 25px #9b4dff;
+}
+
+.hero p{
+    font-size:20px;
+    margin:20px 0;
+    color:#ddd;
+}
+
+/* BOTÕES */
 .btn{
     display:inline-block;
     padding:15px 30px;
@@ -29,19 +50,58 @@ header{
     text-decoration:none;
     font-weight:bold;
     box-shadow:0 0 18px #6a00ff;
+    transition:0.3s;
 }
-.btn.discord{background:#5865F2;box-shadow:0 0 18px #5865F2}
-section{padding:50px 20px;text-align:center}
-h2{font-size:32px;margin-bottom:25px;color:#bb86fc}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;max-width:1000px;margin:auto}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+
+.btn.discord{
+    background:#5865F2;
+    box-shadow:0 0 18px #5865F2;
+}
+
+/* SEÇÕES */
+section{
+    padding:60px 20px;
+    text-align:center;
+}
+
+h2{
+    font-size:34px;
+    margin-bottom:25px;
+    color:#bb86fc;
+}
+
+/* CARDS */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:20px;
+    max-width:1000px;
+    margin:auto;
+}
+
 .card{
     background:#12001f;
     border:2px solid #6a00ff;
     border-radius:18px;
     padding:25px;
     box-shadow:0 0 18px #260044;
+    transition:0.3s;
 }
-.card h3{color:#bb86fc;margin-bottom:15px}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h3{
+    color:#bb86fc;
+    margin-bottom:15px;
+}
+
+/* IP */
 .ip{
     font-size:22px;
     background:#12001f;
@@ -49,8 +109,16 @@ h2{font-size:32px;margin-bottom:25px;color:#bb86fc}
     display:inline-block;
     padding:18px 30px;
     border-radius:14px;
+    box-shadow:0 0 15px #6a00ff;
 }
-footer{padding:25px;text-align:center;background:#050008;color:#aaa}
+
+/* FOOTER */
+footer{
+    padding:25px;
+    text-align:center;
+    background:#050008;
+    color:#aaa;
+}
 </style>
 </head>
 
@@ -58,7 +126,7 @@ footer{padding:25px;text-align:center;background:#050008;color:#aaa}
 
 <header>
     <div class="hero">
-        <h1>RAVEN ROLEPLAY</h1>
+        <h1>🔥 RAVEN ROLEPLAY 🔥</h1>
         <p>Sua nova história começa aqui.</p>
         <a class="btn" href="#">BAIXAR APK</a>
         <a class="btn discord" href="#">DISCORD</a>
@@ -68,20 +136,22 @@ footer{padding:25px;text-align:center;background:#050008;color:#aaa}
 <section>
     <h2>Escolha seu caminho</h2>
     <div class="cards">
+
         <div class="card">
-            <h3>Vida Criminosa</h3>
+            <h3>💀 Vida Criminosa</h3>
             <p>Roube bancos, domine territórios, faça sequestros e participe de grandes ações.</p>
         </div>
 
         <div class="card">
-            <h3>Polícia</h3>
+            <h3>🚔 Polícia</h3>
             <p>Faça operações, blitz, prenda criminosos, aplique multas e proteja a cidade.</p>
         </div>
 
         <div class="card">
-            <h3>Civil</h3>
+            <h3>🏙 Civil</h3>
             <p>Trabalhe, participe de eventos, evolua na cidade e ganhe seu salário justo.</p>
         </div>
+
     </div>
 </section>
 
