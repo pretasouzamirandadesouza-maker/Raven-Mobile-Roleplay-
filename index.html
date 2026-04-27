@@ -7,17 +7,14 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+html{scroll-behavior:smooth}
+body{background:#050008;color:white;overflow-x:hidden}
 
-body{
-    background:#08000f;
-    color:white;
-}
-
-/* HEADER COM IMAGEM */
 header{
     min-height:100vh;
-    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.85)),
-    url("bg.jpg");
+    background:
+        linear-gradient(rgba(0,0,0,.68),rgba(0,0,0,.92)),
+        url("bg.jpg");
     background-size:cover;
     background-position:center;
     display:flex;
@@ -25,99 +22,152 @@ header{
     justify-content:center;
     text-align:center;
     padding:30px;
+    position:relative;
+}
+
+header::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(circle,#6a00ff33 0%,transparent 55%);
+    pointer-events:none;
+}
+
+.hero{
+    position:relative;
+    z-index:2;
+    max-width:900px;
 }
 
 .hero h1{
-    font-size:50px;
-    color:#fff;
-    text-shadow:0 0 25px #9b4dff;
+    font-size:58px;
+    letter-spacing:5px;
+    text-transform:uppercase;
+    text-shadow:0 0 12px #6a00ff,0 0 35px #bb86fc;
+    animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+    from{filter:drop-shadow(0 0 8px #6a00ff)}
+    to{filter:drop-shadow(0 0 25px #bb86fc)}
 }
 
 .hero p{
-    font-size:20px;
+    font-size:21px;
     margin:20px 0;
-    color:#ddd;
+    color:#e8ddff;
 }
 
-/* BOTÕES */
 .btn{
     display:inline-block;
-    padding:15px 30px;
+    padding:16px 34px;
     margin:10px;
-    border-radius:12px;
+    border-radius:15px;
     background:#6a00ff;
     color:white;
     text-decoration:none;
     font-weight:bold;
-    box-shadow:0 0 18px #6a00ff;
-    transition:0.3s;
+    box-shadow:0 0 25px #6a00ff;
+    transition:.3s;
 }
 
-.btn:hover{
-    transform:scale(1.05);
+.btn:hover{transform:scale(1.08)}
+.btn.discord{background:#5865F2;box-shadow:0 0 25px #5865F2}
+
+.btn.disabled{
+    background:#555;
+    box-shadow:none;
+    cursor:not-allowed;
+    opacity:.75;
 }
 
-.btn.discord{
-    background:#5865F2;
-    box-shadow:0 0 18px #5865F2;
+.notice{
+    margin-top:18px;
+    color:#cfc2ff;
+    font-weight:bold;
 }
 
-/* SEÇÕES */
 section{
-    padding:60px 20px;
+    padding:70px 20px;
     text-align:center;
 }
 
 h2{
-    font-size:34px;
-    margin-bottom:25px;
+    font-size:35px;
+    margin-bottom:28px;
     color:#bb86fc;
+    text-shadow:0 0 15px #6a00ff;
 }
 
-/* CARDS */
 .cards{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:20px;
-    max-width:1000px;
+    gap:22px;
+    max-width:1050px;
     margin:auto;
 }
 
 .card{
-    background:#12001f;
+    background:linear-gradient(180deg,#160026,#09000f);
     border:2px solid #6a00ff;
-    border-radius:18px;
-    padding:25px;
-    box-shadow:0 0 18px #260044;
-    transition:0.3s;
+    border-radius:20px;
+    padding:28px;
+    box-shadow:0 0 25px #260044;
+    transition:.3s;
 }
 
 .card:hover{
-    transform:translateY(-5px);
+    transform:translateY(-8px) scale(1.02);
+    box-shadow:0 0 40px #6a00ff;
 }
 
 .card h3{
     color:#bb86fc;
-    margin-bottom:15px;
+    margin-bottom:14px;
+    font-size:22px;
 }
 
-/* IP */
 .ip{
-    font-size:22px;
+    font-size:23px;
     background:#12001f;
     border:2px solid #6a00ff;
     display:inline-block;
-    padding:18px 30px;
-    border-radius:14px;
-    box-shadow:0 0 15px #6a00ff;
+    padding:18px 34px;
+    border-radius:15px;
+    box-shadow:0 0 25px #6a00ff;
 }
 
-/* FOOTER */
-footer{
+.steps{
+    max-width:750px;
+    margin:auto;
+    background:#12001f;
+    border:1px solid #6a00ff;
+    border-radius:18px;
     padding:25px;
+    box-shadow:0 0 22px #260044;
+}
+
+footer{
+    padding:28px;
     text-align:center;
-    background:#050008;
+    background:#030005;
     color:#aaa;
+}
+
+.fade{
+    opacity:0;
+    transform:translateY(35px);
+    transition:1s;
+}
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+@media(max-width:600px){
+    .hero h1{font-size:38px}
+    .hero p{font-size:17px}
+    .btn{padding:14px 24px}
 }
 </style>
 </head>
@@ -126,48 +176,67 @@ footer{
 
 <header>
     <div class="hero">
-        <h1>🔥 RAVEN ROLEPLAY 🔥</h1>
+        <h1>Raven Roleplay</h1>
         <p>Sua nova história começa aqui.</p>
-        <a class="btn" href="#">BAIXAR APK</a>
+
+        <a class="btn disabled">APK EM DESENVOLVIMENTO</a>
         <a class="btn discord" href="#">DISCORD</a>
+
+        <p class="notice">Lançamento em breve — acompanhe as novidades da cidade.</p>
     </div>
 </header>
 
-<section>
+<section class="fade">
     <h2>Escolha seu caminho</h2>
+
     <div class="cards">
-
         <div class="card">
-            <h3>💀 Vida Criminosa</h3>
-            <p>Roube bancos, domine territórios, faça sequestros e participe de grandes ações.</p>
+            <h3>Vida Criminosa</h3>
+            <p>Roube bancos, domine territórios, faça sequestros e participe de grandes ações pela cidade.</p>
         </div>
 
         <div class="card">
-            <h3>🚔 Polícia</h3>
-            <p>Faça operações, blitz, prenda criminosos, aplique multas e proteja a cidade.</p>
+            <h3>Polícia</h3>
+            <p>Faça operações, blitz, prenda criminosos, aplique multas e proteja Raven Roleplay.</p>
         </div>
 
         <div class="card">
-            <h3>🏙 Civil</h3>
-            <p>Trabalhe, participe de eventos, evolua na cidade e ganhe seu salário justo.</p>
+            <h3>Civil</h3>
+            <p>Trabalhe, participe de eventos, evolua dentro da cidade e construa sua história.</p>
         </div>
-
     </div>
 </section>
 
-<section>
+<section class="fade">
     <h2>Servidor</h2>
     <div class="ip">IP: 15.204.150.91:17930</div>
 </section>
 
-<section>
+<section class="fade">
     <h2>Como jogar</h2>
-    <p>Baixe o APK, instale, coloque seu nick no formato <b>Raven_City</b> e entre na cidade.</p>
+    <div class="steps">
+        <p>Baixe o APK quando estiver disponível, instale, coloque seu nick no formato <b>Raven_City</b> e entre na cidade.</p>
+    </div>
 </section>
 
 <footer>
     © 2026 Raven Roleplay — Todos os direitos reservados.
 </footer>
+
+<script>
+const elements = document.querySelectorAll('.fade');
+
+function reveal(){
+    elements.forEach(el=>{
+        const top = el.getBoundingClientRect().top;
+        if(top < window.innerHeight - 100){
+            el.classList.add('show');
+        }
+    });
+}
+window.addEventListener('scroll', reveal);
+reveal();
+</script>
 
 </body>
 </html>
