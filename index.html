@@ -5,261 +5,329 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Raven Roleplay</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800;900&display=swap" rel="stylesheet">
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+html{scroll-behavior:smooth}
+body{background:#050008;color:white;overflow-x:hidden}
+
+:root{
+    --roxo:#8a00ff;
+    --roxo2:#c45cff;
+    --azul:#6f8cff;
+    --fundo:#050008;
 }
 
-body{
-    background:#050008;
-    color:white;
-    overflow-x:hidden;
-}
-
-/* FUNDO */
-header{
-    min-height:100vh;
-    background:
-        linear-gradient(rgba(0,0,0,.70),rgba(0,0,0,.92)),
-        url("bg.jpg");
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:30px;
-    position:relative;
-}
-
-header::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:radial-gradient(circle,#6a00ff40 0%,transparent 60%);
-}
-
-/* HERO */
-.hero{
-    position:relative;
-    z-index:2;
-    max-width:950px;
-}
-
-.logo{
-    width:140px;
-    margin-bottom:20px;
-    filter:drop-shadow(0 0 20px #6a00ff);
-}
-
-.hero h1{
-    font-size:70px;
-    font-weight:800;
-    text-shadow:0 0 20px #6a00ff;
-    margin-bottom:15px;
-}
-
-.hero p{
-    font-size:22px;
-    color:#d7c8ff;
-    margin-bottom:35px;
-}
-
-/* BOTÕES */
-.buttons{
-    display:flex;
-    gap:15px;
-    justify-content:center;
-    flex-wrap:wrap;
-}
-
-.btn{
-    display:inline-block;
-    padding:16px 34px;
-    border-radius:14px;
-    text-decoration:none;
-    font-weight:700;
-    transition:.3s;
-    font-size:16px;
-}
-
-.btn-main{
-    background:linear-gradient(45deg,#6a00ff,#9d4dff);
-    color:white;
-    box-shadow:0 0 20px #6a00ff;
-}
-
-.btn-main:hover{
-    transform:scale(1.05);
-    box-shadow:0 0 30px #9d4dff;
-}
-
-.btn-discord{
-    border:2px solid #7289da;
-    color:#7289da;
-}
-
-.btn-discord:hover{
-    background:#7289da;
-    color:white;
-}
-
-.notice{
-    margin-top:20px;
-    color:#b9a8ff;
-    font-size:15px;
-}
-
-/* MENU */
+/* NAV */
 nav{
     position:fixed;
     top:0;
     width:100%;
-    padding:18px 8%;
+    padding:16px 7%;
+    z-index:999;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background:rgba(0,0,0,.45);
-    backdrop-filter:blur(10px);
-    z-index:999;
+    background:rgba(8,0,18,.65);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 nav h2{
-    color:white;
-    font-size:24px;
-    text-shadow:0 0 10px #6a00ff;
+    font-size:26px;
+    font-weight:900;
+    background:linear-gradient(90deg,#fff,var(--roxo2));
+    -webkit-background-clip:text;
+    color:transparent;
+    text-shadow:0 0 18px #8a00ff;
 }
 
 nav a{
     color:white;
     text-decoration:none;
-    margin-left:18px;
-    font-size:15px;
-    transition:.3s;
+    margin-left:22px;
+    font-weight:600;
+    opacity:.9;
 }
 
-nav a:hover{
-    color:#bb86fc;
+nav a:hover{color:var(--roxo2)}
+
+/* HERO */
+header{
+    min-height:100vh;
+    padding:120px 7% 60px;
+    background:
+    linear-gradient(180deg,rgba(0,0,0,.25),#050008 95%),
+    linear-gradient(90deg,rgba(89,0,255,.65),rgba(0,0,0,.55)),
+    url("bg.jpg");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+}
+
+.hero{
+    max-width:760px;
+    position:relative;
+    z-index:2;
+}
+
+.badge{
+    display:inline-block;
+    padding:10px 18px;
+    border-radius:50px;
+    background:rgba(255,255,255,.10);
+    border:1px solid rgba(255,255,255,.18);
+    backdrop-filter:blur(10px);
+    color:#e8d6ff;
+    margin-bottom:22px;
+    box-shadow:0 0 25px rgba(138,0,255,.35);
+}
+
+.hero h1{
+    font-size:76px;
+    line-height:1;
+    font-weight:900;
+    margin-bottom:22px;
+    text-shadow:0 0 35px var(--roxo);
+}
+
+.hero p{
+    font-size:22px;
+    color:#e5d9ff;
+    line-height:1.7;
+    margin-bottom:35px;
+}
+
+.buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:16px;
+}
+
+.btn{
+    padding:17px 34px;
+    border-radius:18px;
+    text-decoration:none;
+    font-weight:900;
+    color:white;
+    transition:.3s;
+    display:inline-block;
+}
+
+.btn-main{
+    background:linear-gradient(135deg,var(--roxo),var(--roxo2));
+    box-shadow:0 0 28px rgba(138,0,255,.9);
+}
+
+.btn-discord{
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.25);
+    backdrop-filter:blur(10px);
+}
+
+.btn:hover{
+    transform:translateY(-5px) scale(1.03);
+}
+
+/* STATUS */
+.status{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:18px;
+    margin-top:-60px;
+    padding:0 7%;
+    position:relative;
+    z-index:5;
+}
+
+.status-box{
+    background:rgba(20,0,38,.82);
+    border:1px solid rgba(196,92,255,.35);
+    border-radius:22px;
+    padding:24px;
+    text-align:center;
+    backdrop-filter:blur(14px);
+    box-shadow:0 0 25px rgba(138,0,255,.25);
+}
+
+.status-box h3{
+    color:var(--roxo2);
+    font-size:28px;
+}
+
+.status-box p{
+    color:#cfc4df;
 }
 
 /* SECTIONS */
 section{
-    padding:90px 8%;
+    padding:95px 7%;
 }
 
 section h2{
     text-align:center;
-    font-size:42px;
-    margin-bottom:45px;
-    text-shadow:0 0 15px #6a00ff;
+    font-size:44px;
+    margin-bottom:18px;
+    text-shadow:0 0 20px var(--roxo);
+}
+
+.sub{
+    text-align:center;
+    color:#bfaee0;
+    margin-bottom:50px;
+    font-size:18px;
 }
 
 /* CARDS */
 .cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
     gap:25px;
 }
 
 .card{
-    background:linear-gradient(180deg,#12001f,#090010);
-    padding:30px;
-    border-radius:22px;
-    border:1px solid rgba(106,0,255,.4);
-    box-shadow:0 0 18px rgba(106,0,255,.25);
-    transition:.4s;
+    position:relative;
+    padding:32px;
+    border-radius:26px;
+    background:linear-gradient(180deg,#160026,#08000e);
+    border:1px solid rgba(196,92,255,.35);
+    overflow:hidden;
+    box-shadow:0 0 25px rgba(138,0,255,.18);
+    transition:.35s;
 }
+
+.card::before{
+    content:"";
+    position:absolute;
+    inset:-2px;
+    background:radial-gradient(circle at top right,rgba(196,92,255,.35),transparent 45%);
+    z-index:0;
+}
+
+.card *{position:relative;z-index:1}
 
 .card:hover{
     transform:translateY(-10px);
-    box-shadow:0 0 30px rgba(106,0,255,.55);
+    box-shadow:0 0 40px rgba(138,0,255,.55);
 }
 
 .card h3{
-    font-size:25px;
-    margin-bottom:14px;
-    color:#c79cff;
+    font-size:26px;
+    margin-bottom:12px;
+    color:#fff;
 }
 
 .card p{
-    color:#d0c6e8;
-    line-height:1.7;
+    color:#d8ccef;
+    line-height:1.8;
 }
 
 /* GALERIA */
 .gallery{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:20px;
+    gap:22px;
 }
 
 .gallery img{
     width:100%;
-    border-radius:18px;
-    border:1px solid #6a00ff;
-    box-shadow:0 0 20px rgba(106,0,255,.25);
+    height:230px;
+    object-fit:cover;
+    border-radius:24px;
+    border:1px solid rgba(196,92,255,.4);
+    box-shadow:0 0 24px rgba(138,0,255,.25);
 }
 
-/* COMO JOGAR */
-.steps{
+/* DOWNLOAD */
+.download{
+    text-align:center;
+    background:
+    radial-gradient(circle at center,rgba(138,0,255,.28),transparent 55%),
+    #07000d;
+}
+
+.download-box{
     max-width:850px;
     margin:auto;
-    background:#12001f;
-    padding:30px;
-    border-radius:20px;
-    border:1px solid #6a00ff;
-    box-shadow:0 0 25px rgba(106,0,255,.35);
-    line-height:1.9;
-    color:#ddd;
-    text-align:center;
+    padding:45px;
+    border-radius:30px;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.13);
+    backdrop-filter:blur(18px);
+    box-shadow:0 0 40px rgba(138,0,255,.3);
 }
 
-/* BOTÃO FIXO */
+/* BOTAO FIXO */
 .download-fixed{
     position:fixed;
-    bottom:20px;
-    right:20px;
-    background:linear-gradient(45deg,#6a00ff,#9d4dff);
-    color:white;
-    padding:16px 28px;
-    border-radius:16px;
-    text-decoration:none;
-    font-weight:800;
-    box-shadow:0 0 20px #6a00ff;
+    bottom:22px;
+    right:22px;
     z-index:999;
+    padding:17px 30px;
+    border-radius:20px;
+    background:linear-gradient(135deg,var(--roxo),var(--roxo2));
+    color:white;
+    text-decoration:none;
+    font-weight:900;
+    box-shadow:0 0 28px rgba(138,0,255,.9);
+    animation:pulse 1.8s infinite;
 }
 
-/* FOOTER */
+@keyframes pulse{
+    0%{box-shadow:0 0 18px #8a00ff}
+    50%{box-shadow:0 0 38px #c45cff}
+    100%{box-shadow:0 0 18px #8a00ff}
+}
+
 footer{
-    background:#030005;
     padding:35px;
     text-align:center;
-    color:#888;
-    border-top:1px solid rgba(255,255,255,.06);
+    color:#aaa;
+    background:#030005;
 }
 
-/* ANIMAÇÃO */
 .fade{
     opacity:0;
     transform:translateY(35px);
     transition:1s;
 }
+
 .fade.show{
     opacity:1;
     transform:translateY(0);
 }
 
-/* RESPONSIVO */
-@media(max-width:700px){
-    .hero h1{font-size:46px;}
-    .hero p{font-size:18px;}
-    section h2{font-size:32px;}
-    nav{padding:15px 5%;}
+@media(max-width:720px){
+    nav{
+        padding:14px 5%;
+    }
+
+    nav a{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:50px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    section h2{
+        font-size:34px;
+    }
+
+    .download-fixed{
+        left:50%;
+        right:auto;
+        transform:translateX(-50%);
+        bottom:18px;
+        width:75%;
+        text-align:center;
+    }
 }
 </style>
 </head>
@@ -271,67 +339,82 @@ footer{
     <div>
         <a href="#modos">Modos</a>
         <a href="#galeria">Galeria</a>
-        <a href="#jogar">Como Jogar</a>
+        <a href="#download">Download</a>
     </div>
 </nav>
 
 <header>
     <div class="hero">
-        <img src="logo.png" class="logo" alt="Raven Logo">
+        <span class="badge">🚀 Novo Roleplay Mobile em desenvolvimento</span>
 
         <h1>Raven Roleplay</h1>
 
-        <p>Sua nova história começa aqui. Viva o melhor Roleplay mobile com sistema premium, facções, polícia e uma cidade feita para sua evolução.</p>
+        <p>
+            Entre em uma cidade moderna, intensa e cheia de oportunidades.
+            Escolha seu caminho, construa sua história e viva o verdadeiro RP no celular.
+        </p>
 
         <div class="buttons">
-            <a class="btn btn-main">APK EM DESENVOLVIMENTO</a>
-            <a class="btn btn-discord" href="https://discord.gg/Yg6BkN3tA" target="_blank">ENTRAR NO DISCORD</a>
+            <a class="btn btn-main" href="#download">📥 BAIXAR APK</a>
+            <a class="btn btn-discord" href="https://discord.gg/Yg6BkN3tA" target="_blank">💬 DISCORD</a>
         </div>
-
-        <p class="notice">Lançamento em breve — acompanhe todas as novidades.</p>
     </div>
 </header>
 
+<div class="status fade">
+    <div class="status-box">
+        <h3>100%</h3>
+        <p>Mobile</p>
+    </div>
+    <div class="status-box">
+        <h3>24H</h3>
+        <p>Cidade Online</p>
+    </div>
+    <div class="status-box">
+        <h3>RP</h3>
+        <p>Sistema Avançado</p>
+    </div>
+</div>
+
 <section class="fade" id="modos">
     <h2>Escolha seu caminho</h2>
+    <p class="sub">Você decide quem será dentro da cidade.</p>
 
     <div class="cards">
         <div class="card">
-            <h3>🔫 Vida Criminosa</h3>
-            <p>Assaltos, domínio de territórios, facções, operações e grandes ações pela cidade.</p>
+            <h3>🔫 Crime</h3>
+            <p>Facções, territórios, assaltos, sequestros e ações cinematográficas.</p>
         </div>
 
         <div class="card">
             <h3>🚔 Polícia</h3>
-            <p>Operações táticas, perseguições, blitz e proteção total da cidade Raven.</p>
+            <p>Operações, perseguições, blitz, prisões e patrulhamento pela cidade.</p>
         </div>
 
         <div class="card">
             <h3>💼 Civil</h3>
-            <p>Empregos, negócios, eventos, evolução financeira e sua própria trajetória.</p>
+            <p>Empregos, eventos, empresas, veículos e uma vida completa no RP.</p>
         </div>
     </div>
 </section>
 
 <section class="fade" id="galeria">
-    <h2>Galeria</h2>
+    <h2>Galeria da cidade</h2>
+    <p class="sub">Coloque aqui prints do servidor.</p>
 
     <div class="gallery">
-        <img src="print1.jpg" alt="">
-        <img src="print2.jpg" alt="">
-        <img src="print3.jpg" alt="">
+        <img src="print1.jpg">
+        <img src="print2.jpg">
+        <img src="print3.jpg">
     </div>
 </section>
 
-<section class="fade" id="jogar">
-    <h2>Como jogar</h2>
+<section class="download fade" id="download">
+    <div class="download-box">
+        <h2>Baixe o Raven Roleplay</h2>
+        <p class="sub">APK em desenvolvimento. Em breve disponível para Android.</p>
 
-    <div class="steps">
-        <p>
-            Baixe o APK quando for lançado, instale em seu Android, escolha seu nick no formato Nome_Sobrenome e comece sua jornada em Raven Roleplay.
-            <br><br>
-            Entre no Discord para novidades, eventos exclusivos e suporte.
-        </p>
+        <a class="btn btn-main">📥 APK EM BREVE</a>
     </div>
 </section>
 
@@ -339,7 +422,7 @@ footer{
     © 2026 Raven Roleplay — Todos os direitos reservados.
 </footer>
 
-<a href="#" class="download-fixed">📥 BAIXAR</a>
+<a href="#download" class="download-fixed">📥 BAIXAR</a>
 
 <script>
 const elements = document.querySelectorAll('.fade');
